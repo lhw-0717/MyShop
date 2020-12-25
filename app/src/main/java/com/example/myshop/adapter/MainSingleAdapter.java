@@ -49,7 +49,7 @@ public class MainSingleAdapter extends DelegateAdapter.Adapter {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
                 HomeBean.DataBean.BannerBean bean= (HomeBean.DataBean.BannerBean) path;
-                Glide.with(context).load(list.get(position).getImage_url()).into(imageView);
+                Glide.with(context).load(bean.getImage_url()).into(imageView);
             }
         }).start();
     }
@@ -58,6 +58,12 @@ public class MainSingleAdapter extends DelegateAdapter.Adapter {
     public int getItemCount() {
         return 1;
     }
+
+    public void getData(List<HomeBean.DataBean.BannerBean> banner) {
+        this.list.addAll(banner);
+        notifyDataSetChanged();
+    }
+
     public static class SingleHolder extends RecyclerView.ViewHolder{
 
         private final Banner bann;

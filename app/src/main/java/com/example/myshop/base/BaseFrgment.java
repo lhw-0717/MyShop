@@ -14,7 +14,7 @@ import com.example.myshop.contract.MainContract;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-public abstract class BaseFrgment<P extends MainContract.MainPersenter> extends Fragment implements BaseView {
+public abstract class BaseFrgment<P extends BasePersenter> extends Fragment implements BaseView {
     public P persenter;
 
     @Nullable
@@ -35,17 +35,25 @@ public abstract class BaseFrgment<P extends MainContract.MainPersenter> extends 
 
     protected abstract int getLayoutID();
 
-    public void createPersneter(){
+    public void createPersneter() {
         Type genericSuperclass = this.getClass().getGenericSuperclass();
         Type[] typeArguments = ((ParameterizedType) genericSuperclass).getActualTypeArguments();
-        Class<P> p=(Class<P>)typeArguments[0];
+        Class<P> p = (Class<P>) typeArguments[0];
         try {
-            persenter=p.newInstance();
+            persenter = p.newInstance();
             persenter.attrchView(this);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (java.lang.InstantiationException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (persenter != null) {
+            persenter.detachView();
         }
     }
 }

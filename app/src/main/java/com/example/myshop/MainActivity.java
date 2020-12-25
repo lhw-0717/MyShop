@@ -6,11 +6,12 @@ import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myshop.view.fragment.HomeFragment;
-import com.example.myshop.view.fragment.KnowladgeFragment;
-import com.example.myshop.view.fragment.MeFragment;
-import com.example.myshop.view.fragment.NavigationFragment;
-import com.example.myshop.view.fragment.ProjectFragment;
+import com.example.myshop.fragment.HomeFragment;
+import com.example.myshop.fragment.KnowladgeFragment;
+import com.example.myshop.fragment.MeFragment;
+import com.example.myshop.fragment.NavigationFragment;
+import com.example.myshop.fragment.ProjectFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private MeFragment meFragment;
     private NavigationFragment navigationFragment;
     private ProjectFragment projectFragment;
-    private LinearLayout content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void initView() {
         rg = findViewById(R.id.rg);
-        content = findViewById(R.id.content);
     }
 }

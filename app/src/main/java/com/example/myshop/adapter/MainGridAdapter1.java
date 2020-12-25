@@ -73,6 +73,11 @@ public class MainGridAdapter1 extends DelegateAdapter.Adapter {
         return list.size();
     }
 
+    public void getData(List<HomeBean.DataBean.BrandListBean> brandList) {
+        this.list.addAll(brandList);
+        notifyDataSetChanged();
+    }
+
     public static class GridHolder extends RecyclerView.ViewHolder {
 
         private final TextView title;

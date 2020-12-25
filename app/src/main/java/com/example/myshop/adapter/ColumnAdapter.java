@@ -11,26 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
-import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
+import com.alibaba.android.vlayout.layout.ColumnLayoutHelper;
 import com.bumptech.glide.Glide;
-import com.example.myshop.bean.HomeBean;
 import com.example.myshop.R;
+import com.example.myshop.bean.HomeBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainGridAdapter extends DelegateAdapter.Adapter {
+public class ColumnAdapter extends DelegateAdapter.Adapter {
 
-    private LinearLayoutHelper gridLayoutHelper;
-    private List<HomeBean.DataBean.ChannelBean>list=new ArrayList<>();
+    private ColumnLayoutHelper columnLayoutHelper;
+    private List<HomeBean.DataBean.ChannelBean> list=new ArrayList<>();
 
+    public ColumnAdapter(ColumnLayoutHelper columnLayoutHelper) {
+        this.columnLayoutHelper = columnLayoutHelper;
+    }
 
     @Override
     public LayoutHelper onCreateLayoutHelper() {
-        return gridLayoutHelper;
-    }
-    public MainGridAdapter(LinearLayoutHelper gridLayoutHelper) {
-        this.gridLayoutHelper = gridLayoutHelper;
+        return columnLayoutHelper;
     }
 
     @NonNull

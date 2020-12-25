@@ -15,7 +15,7 @@ public class MainPersenterImpl extends BasePersenter<MainContract.MainView, Main
 
     @Override
     public void per() {
-        iModel.getMod(URLConstant.BASEURL, new INteCallBack<HomeBean>() {
+        iModel.getMod(URLConstant.NEWDATA, new INteCallBack<HomeBean>() {
             @Override
             public void onSuccess(HomeBean homeBean) {
                 iView.getData(homeBean);
@@ -23,7 +23,7 @@ public class MainPersenterImpl extends BasePersenter<MainContract.MainView, Main
 
             @Override
             public void onFail(String err) {
-                iView.getResult("网络异常：" + err);
+                iView.getResult(err);
             }
         });
     }
