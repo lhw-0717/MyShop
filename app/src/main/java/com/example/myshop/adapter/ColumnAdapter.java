@@ -1,5 +1,6 @@
 package com.example.myshop.adapter;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,15 +38,16 @@ public class ColumnAdapter extends DelegateAdapter.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_item, parent, false);
-        return new GridHolder(inflate);
+        return new GridsHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        GridHolder holder1= (GridHolder) holder;
-        Glide.with(holder.itemView.getContext()).load(list.get(position).getIcon_url()).into(holder1.img);
-        holder1.title.setText(list.get(position).getName());
+        GridsHolder holder2= (GridsHolder) holder;
+        Glide.with(holder.itemView.getContext()).load(list.get(position).getIcon_url()).into(holder2.img);
+        holder2.title.setText(list.get(position).getName());
     }
+
 
     @Override
     public int getItemCount() {
@@ -57,12 +59,12 @@ public class ColumnAdapter extends DelegateAdapter.Adapter {
         notifyDataSetChanged();
     }
 
-    public static class GridHolder extends RecyclerView.ViewHolder{
+    public static class GridsHolder extends RecyclerView.ViewHolder{
 
         private final ImageView img;
         private final TextView title;
 
-        public GridHolder(@NonNull View itemView) {
+        public GridsHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.grid_img);
             title = itemView.findViewById(R.id.grid_title);
