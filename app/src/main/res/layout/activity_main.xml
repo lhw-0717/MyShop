@@ -10,11 +10,11 @@
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         android:background="@drawable/count"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/vp"
+        app:layout_constraintBottom_toTopOf="@id/content"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -31,12 +31,21 @@
 
     </LinearLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp"
+    <LinearLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/rg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/v"
         app:layout_constraintTop_toBottomOf="@id/ll" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/rg"
+        app:layout_constraintTop_toBottomOf="@id/content" />
 
     <RadioGroup
         android:id="@+id/rg"
@@ -44,62 +53,62 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vp">
+        app:layout_constraintTop_toBottomOf="@id/v">
 
         <RadioButton
             android:id="@+id/rb1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="null"
+            android:button="@null"
             android:drawableTop="@drawable/home_selector"
             android:gravity="center"
             android:text="首页"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rb2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="null"
+            android:button="@null"
             android:drawableTop="@drawable/knowladge_selector"
             android:gravity="center"
             android:text="专题"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rb3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="null"
+            android:button="@null"
             android:drawableTop="@drawable/me_selector"
             android:gravity="center"
             android:text="分类"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rb4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="null"
+            android:button="@null"
             android:drawableTop="@drawable/navigation_selector"
             android:gravity="center"
             android:text="购物车"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rb5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button="null"
+            android:button="@null"
             android:drawableTop="@drawable/projrct_selector"
             android:gravity="center"
             android:text="我的"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </RadioGroup>
 

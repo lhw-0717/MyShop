@@ -2,38 +2,108 @@ package com.example.myshop;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+
+import com.example.myshop.fragment.HomeFragment;
+import com.example.myshop.fragment.KnowladgeFragment;
+import com.example.myshop.fragment.MeFragment;
+import com.example.myshop.fragment.NavigationFragment;
+import com.example.myshop.fragment.ProjectFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup rg;
-    private RadioButton rb1;
-    private RadioButton rb2;
-    private RadioButton rb3;
-    private RadioButton rb4;
-    private RadioButton rb5;
-    private LinearLayout ll;
-    private ViewPager vp;
+    private HomeFragment homeFragment;
+    private KnowladgeFragment knowladgeFragment;
+    private MeFragment meFragment;
+    private NavigationFragment navigationFragment;
+    private ProjectFragment projectFragment;
+    private LinearLayout content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        initFragment();
+    }
+
+    private void initFragment() {
+        androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        homeFragment = new HomeFragment();
+        knowladgeFragment = new KnowladgeFragment();
+        meFragment = new MeFragment();
+        navigationFragment = new NavigationFragment();
+        projectFragment = new ProjectFragment();
+        transaction.add(R.id.content, homeFragment)
+                .add(R.id.content, knowladgeFragment)
+                .add(R.id.content, meFragment)
+                .add(R.id.content, navigationFragment)
+                .add(R.id.content, projectFragment)
+                .show(homeFragment)
+                .hide(knowladgeFragment)
+                .hide(meFragment)
+                .hide(navigationFragment)
+                .hide(projectFragment)
+                .commit();
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                switch (checkedId){
+                    case R.id.rb1:
+                        transaction.show(homeFragment)
+                                .hide(knowladgeFragment)
+                                .hide(meFragment)
+                                .hide(navigationFragment)
+                                .hide(projectFragment)
+                                .commit();
+                        break;
+                    case R.id.rb2:
+                        transaction.show(knowladgeFragment)
+                                .hide(homeFragment)
+                                .hide(meFragment)
+                                .hide(navigationFragment)
+                                .hide(projectFragment)
+                                .commit();
+                        break;
+                    case R.id.rb3:
+                        transaction.show(meFragment)
+                                .hide(homeFragment)
+                                .hide(knowladgeFragment)
+                                .hide(navigationFragment)
+                                .hide(projectFragment)
+                                .commit();
+                        break;
+                    case R.id.rb4:
+                        transaction.show(navigationFragment)
+                                .hide(homeFragment)
+                                .hide(knowladgeFragment)
+                                .hide(meFragment)
+                                .hide(projectFragment)
+                                .commit();
+                        break;
+                    case R.id.rb5:
+                        transaction.show(projectFragment)
+                                .hide(homeFragment)
+                                .hide(knowladgeFragment)
+                                .hide(navigationFragment)
+                                .hide(navigationFragment)
+                                .commit();
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + checkedId);
+                }
+            }
+        });
+
+
     }
 
     private void initView() {
         rg = findViewById(R.id.rg);
-        rb1 = findViewById(R.id.rb1);
-        rb2 = findViewById(R.id.rb2);
-        rb3 = findViewById(R.id.rb3);
-        rb4 = findViewById(R.id.rb4);
-        rb5 = findViewById(R.id.rb5);
-        ll = findViewById(R.id.ll);
-        vp = findViewById(R.id.vp);
+        content = findViewById(R.id.content);
     }
 }
