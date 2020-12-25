@@ -6,11 +6,11 @@ import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myshop.fragment.HomeFragment;
-import com.example.myshop.fragment.KnowladgeFragment;
-import com.example.myshop.fragment.MeFragment;
-import com.example.myshop.fragment.NavigationFragment;
-import com.example.myshop.fragment.ProjectFragment;
+import com.example.myshop.view.fragment.HomeFragment;
+import com.example.myshop.view.fragment.KnowladgeFragment;
+import com.example.myshop.view.fragment.MeFragment;
+import com.example.myshop.view.fragment.NavigationFragment;
+import com.example.myshop.view.fragment.ProjectFragment;
 
 public class MainActivity extends AppCompatActivity {
 

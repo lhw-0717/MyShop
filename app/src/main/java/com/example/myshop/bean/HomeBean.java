@@ -1,8 +1,9 @@
-package com.example.myshop;
+package com.example.myshop.bean;
 
 import java.util.List;
 
-public class HomeBean {
+public class
+HomeBean {
 
     /**
      * errno : 0

@@ -1,4 +1,4 @@
-package com.example.myshop.fragment;
+package com.example.myshop.view.fragment;
 
 import android.os.Bundle;
 
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.myshop.R;
 
-public class NavigationFragment extends Fragment {
+public class ProjectFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation, container, false);
+        return inflater.inflate(R.layout.fragment_project, container, false);
     }
 }
