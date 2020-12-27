@@ -20,6 +20,7 @@ import com.example.myshop.adapter.MainGridAdapter2;
 import com.example.myshop.adapter.MainGridAdapter3;
 import com.example.myshop.adapter.MainLinearAdapter;
 import com.example.myshop.adapter.MainSingleAdapter;
+import com.example.myshop.adapter.SearchAdapter;
 import com.example.myshop.base.BaseFrgment;
 import com.example.myshop.bean.HomeBean;
 import com.example.myshop.contract.MainContract;
@@ -57,6 +58,7 @@ public class HomeFragment extends BaseFrgment<MainPersenterImpl> implements Main
     private MainGridAdapter3 mainGridAdapter0;
     private MainLinearAdapter mainLinearAdapter12;
     private MainGridAdapter3 mainGridAdapter11;
+    private SearchAdapter searchAdapter;
 
     @Override
     protected void initData() {
@@ -79,6 +81,8 @@ public class HomeFragment extends BaseFrgment<MainPersenterImpl> implements Main
         linearLayoutHelper.setPadding(1, 1, 1, 1);// 设置LayoutHelper的子元素相对LayoutHelper边缘的距离
         linearLayoutHelper.setMargin(2, 2, 2, 2);// 设置LayoutHelper边缘相对父控件（即RecyclerView）的距离
         linearLayoutHelper.setBgColor(Color.WHITE);// 设置背景颜色
+
+        searchAdapter = new SearchAdapter(linearLayoutHelper);
         mainSingleAdapter = new MainSingleAdapter(linearLayoutHelper);
         mainLinearAdapter = new MainLinearAdapter(linearLayoutHelper, "品牌制造商直供");
 
@@ -312,6 +316,7 @@ public class HomeFragment extends BaseFrgment<MainPersenterImpl> implements Main
 
 
         DelegateAdapter adapter = new DelegateAdapter(virtualLayoutManager, false);
+        adapter.addAdapter(searchAdapter);
         adapter.addAdapter(mainSingleAdapter);
         adapter.addAdapter(columnAdapter);
         adapter.addAdapter(mainLinearAdapter);
