@@ -1,6 +1,5 @@
-package com.example.myshop.fragment;
+package com.example.myshop;
 
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -8,55 +7,49 @@ import android.widget.Button;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myshop.R;
-import com.example.myshop.TwoActivity;
-import com.example.myshop.base.BaseFrgment;
+import com.example.myshop.base.BaseActivity;
 import com.example.myshop.base.KnowladgeAdapter;
 import com.example.myshop.bean.SpecialBean;
-import com.example.myshop.contract.KnowladgeContract;
-import com.example.myshop.contract.MainContract;
-import com.example.myshop.persenter.KnowladgePersenterimpl;
-import com.example.myshop.persenter.MainPersenterImpl;
+import com.example.myshop.contract.Knowladge2Contract;
+import com.example.myshop.persenter.Knowladge2Persenterimpl;
 
-public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterimpl> implements KnowladgeContract.KnowladgeView {
-
+public class TwoActivity extends BaseActivity<Knowladge2Persenterimpl> implements Knowladge2Contract.Knowladge2View {
     private RecyclerView recyclerMain;
     private Button bntOne;
     private Button bntTwo;
     private KnowladgeAdapter adapter;
-
     @Override
     protected void initData() {
         persenter.per();
     }
 
     @Override
-    protected void initView(View inflate) {
-        recyclerMain = inflate.findViewById(R.id.recycler_main);
-        bntOne = inflate.findViewById(R.id.bnt_one);
-        bntTwo = inflate.findViewById(R.id.bnt_two);
+    protected void initView() {
+        recyclerMain = findViewById(R.id.recycler_main);
+        bntOne = findViewById(R.id.bnt_one);
+        bntTwo = findViewById(R.id.bnt_two);
 
-        recyclerMain.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerMain.setLayoutManager(new LinearLayoutManager(this));
         adapter = new KnowladgeAdapter();
         recyclerMain.setAdapter(adapter);
         bntOne.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 bntOne.setTextColor(0x151515);
+                finish();
             }
         });
         bntTwo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TwoActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                bntTwo.setTextColor(0xCFCFCC);
             }
         });
     }
 
     @Override
     protected int getLayoutID() {
-        return R.layout.fragment_knowladge;
+        return R.layout.activity_knowladge2;
     }
 
     @Override
