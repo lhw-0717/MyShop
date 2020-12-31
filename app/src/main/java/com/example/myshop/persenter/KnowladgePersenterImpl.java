@@ -10,7 +10,7 @@ import com.example.myshop.model.MainModelImpl;
 import com.example.myshop.net.INteCallBack;
 import com.example.myshop.net.URLConstant;
 
-public class KnowladgePersenterimpl extends BasePersenter<KnowladgeContract.KnowladgeView, KnowladgeContract.KnowladgeModel> implements KnowladgeContract.KnowladgePersenter {
+public class KnowladgePersenterImpl extends BasePersenter<KnowladgeContract.KnowladgeView, KnowladgeContract.KnowladgeModel> implements KnowladgeContract.KnowladgePersenter {
     @Override
     protected KnowladgeContract.KnowladgeModel getModel() {
         return new KnowladgeModelImpl();

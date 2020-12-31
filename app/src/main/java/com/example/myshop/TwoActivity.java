@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myshop.base.BaseActivity;
-import com.example.myshop.base.KnowladgeAdapter;
+import com.example.myshop.adapter.KnowladgeAdapter;
 import com.example.myshop.bean.SpecialBean;
 import com.example.myshop.contract.Knowladge2Contract;
-import com.example.myshop.persenter.Knowladge2Persenterimpl;
+import com.example.myshop.persenter.Knowladge2PersenterImpl;
 
-public class TwoActivity extends BaseActivity<Knowladge2Persenterimpl> implements Knowladge2Contract.Knowladge2View {
+public class TwoActivity extends BaseActivity<Knowladge2PersenterImpl> implements Knowladge2Contract.Knowladge2View {
     private RecyclerView recyclerMain;
     private Button bntOne;
     private Button bntTwo;

@@ -9,7 +9,7 @@ import com.example.myshop.model.KnowladgeModelImpl;
 import com.example.myshop.net.INteCallBack;
 import com.example.myshop.net.URLConstant;
 
-public class Knowladge2Persenterimpl extends BasePersenter<Knowladge2Contract.Knowladge2View, Knowladge2Contract.Knowladge2Model> implements Knowladge2Contract.Knowladge2Persenter {
+public class Knowladge2PersenterImpl extends BasePersenter<Knowladge2Contract.Knowladge2View, Knowladge2Contract.Knowladge2Model> implements Knowladge2Contract.Knowladge2Persenter {
     @Override
     protected Knowladge2Contract.Knowladge2Model getModel() {
         return new Knowladge2ModelImpl();

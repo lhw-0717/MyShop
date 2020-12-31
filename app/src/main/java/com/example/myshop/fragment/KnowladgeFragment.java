@@ -11,14 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myshop.R;
 import com.example.myshop.TwoActivity;
 import com.example.myshop.base.BaseFrgment;
-import com.example.myshop.base.KnowladgeAdapter;
+import com.example.myshop.adapter.KnowladgeAdapter;
 import com.example.myshop.bean.SpecialBean;
 import com.example.myshop.contract.KnowladgeContract;
-import com.example.myshop.contract.MainContract;
-import com.example.myshop.persenter.KnowladgePersenterimpl;
-import com.example.myshop.persenter.MainPersenterImpl;
+import com.example.myshop.persenter.KnowladgePersenterImpl;
 
-public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterimpl> implements KnowladgeContract.KnowladgeView {
+public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterImpl> implements KnowladgeContract.KnowladgeView {
 
     private RecyclerView recyclerMain;
     private Button bntOne;
