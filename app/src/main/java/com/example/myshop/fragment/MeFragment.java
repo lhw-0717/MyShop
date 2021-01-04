@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.myshop.CustomViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.example.myshop.R;
 import com.example.myshop.adapter.FragTabAdapter;
-import com.example.myshop.app.Myapp;
 import com.example.myshop.base.BaseFrgment;
 import com.example.myshop.bean.MeTabBean;
 import com.example.myshop.contract.MeContract;
@@ -22,7 +23,7 @@ public class MeFragment extends BaseFrgment<MePersenterImpl> implements MeContra
 
 
     private VerticalTabLayout vTab;
-    private CustomViewPager vpSort;
+    private ViewPager vpSort;
 
     @Override
     protected void initData() {
@@ -34,8 +35,6 @@ public class MeFragment extends BaseFrgment<MePersenterImpl> implements MeContra
     protected void initView(View inflate) {
         vTab = inflate.findViewById(R.id.vTab);
         vpSort = inflate.findViewById(R.id.vp_sort);
-        //设置其是否能滑动换页
-        vpSort.setScanScroll(true);
     }
 
     @Override
@@ -46,13 +45,12 @@ public class MeFragment extends BaseFrgment<MePersenterImpl> implements MeContra
     @Override
     public void getData(MeTabBean tabBean) {
         List<MeTabBean.DataBean.CategoryListBean> categoryList = tabBean.getData().getCategoryList();
-        final ArrayList<CategoryTabFragment> fs = new ArrayList<>();
+        List<Fragment> fs = new ArrayList<>();
         for (int i = 0; i <categoryList.size(); i++) {
             int id = categoryList.get(i).getId();
             CategoryTabFragment f = new CategoryTabFragment();
             Bundle bundle = new Bundle();
             bundle.putInt("id", id);
-            Myapp.getMap().put("id",id);
             f.setArguments(bundle);
             fs.add(f);
         }

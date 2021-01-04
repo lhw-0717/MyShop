@@ -14,10 +14,10 @@ import java.util.List;
 
 
 public class FragTabAdapter extends FragmentPagerAdapter {
-    private List<CategoryTabFragment> fs = new ArrayList<>();
-    private List<MeTabBean.DataBean.CategoryListBean> mDataBeans = new ArrayList<>();
+    private List<Fragment> fs;
+    private List<MeTabBean.DataBean.CategoryListBean> mDataBeans;
 
-    public FragTabAdapter(@NonNull FragmentManager fm, List<CategoryTabFragment> fs, List<MeTabBean.DataBean.CategoryListBean> mDataBeans) {
+    public FragTabAdapter(@NonNull FragmentManager fm, List<Fragment> fs, List<MeTabBean.DataBean.CategoryListBean> mDataBeans) {
         super(fm);
         this.fs = fs;
         this.mDataBeans = mDataBeans;

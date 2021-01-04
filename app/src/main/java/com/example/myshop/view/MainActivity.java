@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                                 .hide(homeFragment)
                                 .hide(knowladgeFragment)
                                 .hide(navigationFragment)
-                                .hide(navigationFragment)
+                                .hide(meFragment)
                                 .commit();
                         break;
                     default:

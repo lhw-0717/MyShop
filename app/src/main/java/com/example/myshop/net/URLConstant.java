@@ -14,7 +14,7 @@ public class URLConstant {
 
 
     //    https://cdwan.cn/api/catalog/current?id=1005000
-    public static String CURRENT = BASEURL + "api/catalog/current?id=";
+    public static String CURRENT = BASEURL + "api/catalog/current";
 
     //    https://cdplay.cn/api/auth/refreshToken
     public static String TOKEN = BASEURL1 + "api/auth/refreshToken";

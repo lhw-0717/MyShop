@@ -17,7 +17,7 @@ public class MeTabPersenterImpl extends BasePersenter<MeTabContract.MeTabView, M
 
     @Override
     public void per(int id) {
-        iModel.getMod(URLConstant.CURRENT+id, new INteCallBack<MeTabBean>() {
+        iModel.getMod(URLConstant.CURRENT+"/?id="+id, new INteCallBack<MeTabBean>() {
             @Override
             public void onSuccess(MeTabBean tabBean) {
                 iView.getData(tabBean);

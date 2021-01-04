@@ -28,7 +28,6 @@ public class CategoryTabFragment extends BaseFrgment<MeTabPersenterImpl> impleme
 
     @Override
     protected void initData() {
-        id = getArguments().getInt("id");
         persenter.per(id);
     }
 
@@ -38,7 +37,7 @@ public class CategoryTabFragment extends BaseFrgment<MeTabPersenterImpl> impleme
         sortDesc = inflate.findViewById(R.id.sort_desc);
         fenleiname = inflate.findViewById(R.id.fenleiname);
         rlvSort = inflate.findViewById(R.id.rlv_sort);
-
+        id = getArguments().getInt("id");
     }
 
     @Override
@@ -61,4 +60,5 @@ public class CategoryTabFragment extends BaseFrgment<MeTabPersenterImpl> impleme
     public void getResult(String string) {
         Log.e("TAG", "getResult: "+string );
     }
+
 }

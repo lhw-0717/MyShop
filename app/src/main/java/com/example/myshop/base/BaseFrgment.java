@@ -49,11 +49,11 @@ public abstract class BaseFrgment<P extends BasePersenter> extends Fragment impl
         }
     }
 
-    @Override
+   /* @Override
     public void onDestroyView() {
         super.onDestroyView();
         if (persenter != null) {
             persenter.detachView();
         }
-    }
+    }*/
 }
