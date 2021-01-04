@@ -37,8 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#FBF9F9"
-                    android:text="上一页"
-                    android:textColor="#CFCFCC" />
+                    android:text="上一页" />
 
                 <Button
                     android:id="@+id/bnt_two"

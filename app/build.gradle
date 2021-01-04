@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.myshop"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -75,4 +75,5 @@ dependencies {
     implementation ('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
     }
+    implementation 'com.tencent:mmkv-static:1.2.7'
 }

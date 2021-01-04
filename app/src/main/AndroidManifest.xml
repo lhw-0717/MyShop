@@ -3,6 +3,7 @@
     package="com.example.myshop">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.Myapp"
         android:allowBackup="true"
@@ -11,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShop">
-        <activity android:name=".TwoActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.LoginStartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.LoginActivity" />
+        <activity android:name=".view.MainActivity"></activity>
     </application>
 
 </manifest>

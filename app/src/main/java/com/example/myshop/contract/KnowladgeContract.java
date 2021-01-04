@@ -11,7 +11,7 @@ public class KnowladgeContract {
         <T>void getMod(String url, INteCallBack<T> callBack);
     }
     public interface KnowladgePersenter{
-        void per();
+        void per(int id);
     }
     public interface KnowladgeView extends BaseView {
         void getData(SpecialBean specialBean);

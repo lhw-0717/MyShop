@@ -1,6 +1,6 @@
 package com.example.myshop.fragment;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myshop.R;
-import com.example.myshop.TwoActivity;
 import com.example.myshop.base.BaseFrgment;
 import com.example.myshop.adapter.KnowladgeAdapter;
 import com.example.myshop.bean.SpecialBean;
 import com.example.myshop.contract.KnowladgeContract;
 import com.example.myshop.persenter.KnowladgePersenterImpl;
+
+import static com.example.myshop.R.color.black;
+import static com.example.myshop.R.color.white;
 
 public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterImpl> implements KnowladgeContract.KnowladgeView {
 
@@ -25,7 +27,7 @@ public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterImpl> imple
 
     @Override
     protected void initData() {
-        persenter.per();
+        persenter.per(1);
     }
 
     @Override
@@ -38,16 +40,21 @@ public class KnowladgeFragment extends BaseFrgment<KnowladgePersenterImpl> imple
         adapter = new KnowladgeAdapter();
         recyclerMain.setAdapter(adapter);
         bntOne.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                bntOne.setTextColor(0x151515);
+                bntTwo.setTextColor(black);
+                bntOne.setTextColor(white);
+                persenter.per(1);
             }
         });
         bntTwo.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TwoActivity.class);
-                startActivity(intent);
+                bntOne.setTextColor(black);
+                bntTwo.setTextColor(white);
+                persenter.per(2);
             }
         });
     }

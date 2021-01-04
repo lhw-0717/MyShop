@@ -29,6 +29,7 @@ public class MeFragment extends BaseFrgment<MePersenterImpl> implements MeContra
         persenter.per();
     }
 
+
     @Override
     protected void initView(View inflate) {
         vTab = inflate.findViewById(R.id.vTab);
@@ -41,7 +42,7 @@ public class MeFragment extends BaseFrgment<MePersenterImpl> implements MeContra
     protected int getLayoutID() {
         return R.layout.fragment_me;
     }
-
+    
     @Override
     public void getData(MeTabBean tabBean) {
         List<MeTabBean.DataBean.CategoryListBean> categoryList = tabBean.getData().getCategoryList();

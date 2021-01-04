@@ -41,6 +41,9 @@ public class KnowladgeAdapter extends RecyclerView.Adapter{
     }
 
     public void getData(List<SpecialBean.DataBean.DataBeans> data) {
+        if (list!=null&&list.size()>0){
+            list.clear();
+        }
         list.addAll(data);
         notifyDataSetChanged();
     }
